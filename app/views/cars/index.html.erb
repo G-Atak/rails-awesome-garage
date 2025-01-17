@@ -1,6 +1,16 @@
 <h1>Awesome Garage</h1>
 <ul>
   <% @cars.each do |car| %>
-    <li><%= car.brand %></li>
+    <li> <%= link_to car.brand, car_path(car) %></li>
   <% end %>
 </ul>
+
+
+<div class="linkContainer">
+  <div class="Backhome">
+    <%= link_to 'Home', root_path %>
+  </div>
+  <div class="favouritesLink">
+    <%= link_to 'Go to Favourites❤️', favourites_path %>
+  </div>
+</div>

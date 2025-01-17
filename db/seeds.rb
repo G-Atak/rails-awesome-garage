@@ -7,11 +7,21 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-ife = Owner.create!(nickname: "Ife500")
-deji = Owner.create!(nickname: "Deji1000")
-sanjay = Owner.create!(nickname: "RoadToaster2000")
-alex = Owner.create!(nickname: "Nimbus2000")
-Car.create!(brand: "Mercedes", model: "AMG Etron", year: 1960, fuel: "Petrol", owner: ife)
-Car.create!(brand: "Mercedes", model: "300SL Roaster", year: 1987, fuel: "Diesel", owner: deji)
-Car.create!(brand: "Mercedes", model: "AMG 365", year: 2020, fuel: "Diesel", owner: sanjay)
-Car.create!(brand: "Tesla", model: "Tesla Roaster", year: 2025, fuel: "Electric", owner: alex)
+
+# Destroy existing records to start fresh
+Review.destroy_all
+Car.destroy_all
+Owner.destroy_all
+
+
+# Create new owners
+Ifetayo = Owner.create!(nickname: "Ife500")
+Deji = Owner.create!(nickname: "Deji1000")
+Sanjay_guru = Owner.create!(nickname: "RoadToaster2000")
+Alex = Owner.create!(nickname: "Nimbus2000")
+
+# Create new cars associated with the owners
+Car.create!(brand: "Mclaren", model: "Mclaren P1", year: 2013, fuel: "Petro-ElectriC", owner: Ifetayo)
+Car.create!(brand: "Mercedes", model: "G63 Brabus", year: 2025, fuel: "Petrol", owner: Deji)
+Car.create!(brand: "Tesla", model: "Roadster Model 2", year: 2023, fuel: "Diesel", owner: Sanjay_guru)
+Car.create!(brand: "Ferrari", model: "LaFerrari", year: 2013, fuel: "Electric", owner: Alex)
